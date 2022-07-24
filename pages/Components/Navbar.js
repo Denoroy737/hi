@@ -8,20 +8,24 @@ const Navbar = () => {
         <div className="px-10 mx-auto sticky w-full top-0 bg-white z-10">
             <div className="flex justify-between py-3 md:py-0 items-center">
                 <div className="">
-                    {/* <Image src={"/../../public/logo.svg"} alt={"logo"} height={50} width={200} /> */}
-                    logo
+                    <Link href="/">
+                        <a>
+                            Logo
+                            {/* <Image src={"/../../public/logo.jpg"} alt={"logo"} height={100} width={200} /> */}
+                        </a>
+                    </Link>
                 </div>
                 <div>
                     <ul className="md:flex md:justify-between md:space-x-3 hidden ">
-                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">HOME</li></a></Link>
-                        <Link href={"tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">MEN</li></a></Link>
-                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">WOMEN</li></a></Link>
-                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">SHOP</li></a></Link>
-                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">PRODUCTS</li></a></Link>
+                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
+                        <Link href={"tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
+                        <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
+                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
+                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
                     </ul>
                 </div>
                 <div className="">
-                    <div className="lg:block hidden">Join Now</div>
+                    <div className="lg:block hidden py-2 px-5 bg-gray-200 rounded-md">Join Now</div>
                     <div className="flex space-x-3">
                         <div className="lg:hidden block">
                             <Popover>
