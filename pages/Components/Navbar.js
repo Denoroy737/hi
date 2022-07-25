@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const Navbar = () => {
     return (
-        <div className="px-10 mx-auto sticky w-full top-0 bg-white z-10">
+        <div className="px-10 mx-auto sticky w-full top-0 bg-white z-50">
             <div className="flex justify-between py-3 md:py-0 items-center">
                 <div className="">
                     <Link href="/">
                         <a>
-                            Logo
+                            HI
                             {/* <Image src={"/../../public/logo.jpg"} alt={"logo"} height={100} width={200} /> */}
                         </a>
                     </Link>
@@ -24,8 +24,8 @@ const Navbar = () => {
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
                     </ul>
                 </div>
-                <div className="">
-                    <div className="lg:block hidden py-2 px-5 bg-gray-200 rounded-md">Join Now</div>
+                <div className="flex items-center">
+                    <div className="lg:inline-block hidden py-2 px-5 bg-gray-200 rounded-md">Join Now</div>
                     <div className="flex space-x-3">
                         <div className="lg:hidden block">
                             <Popover>
@@ -43,7 +43,7 @@ const Navbar = () => {
                                 </Popover.Content>
                             </Popover>
                         </div>
-                        <div className="lg:hidden block">
+                        <div className="inline-block cursor-pointer">
                             <Popover>
                                 <Popover.Trigger>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -52,8 +52,13 @@ const Navbar = () => {
                                 </Popover.Trigger>
                                 <Popover.Content>
                                     <div className="py-5 px-3">
-                                        <h2 className="text-center">Shopping Cart</h2>
-                                        <h3>Your cart is Empty!</h3>
+                                        <h3 className="md:text-left text-center font-bold">Shopping Cart</h3>
+                                        {/* <h4>Your cart is Empty!</h4> */}
+                                        <div className="flex space-x-2">
+                                        <h5 className="index-block">Shooting Stars XL</h5>
+                                        <h5></h5>
+                                        <p className="index-block">₹150</p>
+                                        </div>
                                         <p className="font-bold">Subtotal: ₹0</p>
                                         <div className="flex space-x-1">
                                             <div>
