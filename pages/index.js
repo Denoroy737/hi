@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-[100vh]">
-
+          <h1>New text</h1>
       </div>
     </div>
   );
