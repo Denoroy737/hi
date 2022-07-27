@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div>
                     <ul className="md:flex md:justify-between md:space-x-3 hidden ">
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
-                        <Link href={"tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
+                        <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
                         <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
                                 </Popover.Trigger>
                                 <Popover.Content>
                                     <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
-                                    <Link href={"tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
+                                    <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
                                     <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
                                     <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
                                     <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
