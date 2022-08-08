@@ -1,4 +1,3 @@
-// 1. import `NextUIProvider` component
 import { NextUIProvider } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
 import Footer from './Components/Footer';
@@ -8,55 +7,59 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
   const [subtotal, setSubtotal] = useState(0);
-  let newCart = cart;
+  let newcart = { ...cart };
+
 
   useEffect(() => {
     try {
       if (localStorage.getItem('cart')) {
         setCart(JSON.parse(localStorage.getItem('cart')));
+        saveCart(JSON.parse(localStorage.getItem('cart')));
       }
     } catch (error) {
       console.log(error);
       localStorage.removeItem('cart');
     }
   }, []);
-
-  // console.log(cart);
-
+  
   const saveCart = (cart) => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // add subtotal to cart conver price to number
+    // fix the nan error
     let subtotal = 0;
+    localStorage.setItem('cart', JSON.stringify(cart));
     let keys = Object.keys(cart);
     for (let i = 0; i < keys.length; i++) {
-      subtotal += cart[keys[i]].price * cart[keys[i]].quantity;
-    }
+      subtotal += cart[keys[i]].price * cart[keys[i]].qty;
+    } 
     setSubtotal(subtotal);
+    console.log(subtotal);
   }
 
   const addToCart = (item, qty, price, name, size, variant, image) => {
-    let newCart = JSON.parse(localStorage.getItem('cart'));
+    let newCart = { ...cart };
     if (item in cart) {
       newCart[item].qty = cart[item].qty + qty;
-      console.log( qty + " after added +1 in a cart qty");
+      console.log(qty + " after added +1 in a cart qty");
     }
     else {
       newCart[item] = { qty: 1, price, name, size, variant, image };
       console.log(newCart + "after created new cart");
     }
+    console.log(newCart + "after save cart");
     setCart(newCart);
     saveCart(newCart);
-    console.log(newCart + "after save cart");
+
   }
 
   const removeFromCart = (item, qty, price, name, size, variant, image) => {
     let newCart = JSON.parse(localStorage.getItem('cart'));
     if (item in cart) {
       newCart[item].qty = cart[item].qty - qty;
-      console.log( qty + " after -1 in a cart qty");
+      console.log(qty + " after -1 in a cart qty");
     }
     if (newCart[item]["qty"] <= 0) {
       delete newCart[item];
-      console.log( qty + " after deleted item of cart");
+      console.log(qty + " after deleted item of cart");
     }
     setCart(newCart);
     saveCart(newCart);
@@ -70,9 +73,9 @@ function MyApp({ Component, pageProps }) {
   return (
     // 2. Use at the root of your app
     <NextUIProvider>
-      <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} cleanCart={cleanCart} saveCart={saveCart} subtotal={subtotal}/>
+      <Navbar key={subtotal} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} cleanCart={cleanCart} saveCart={saveCart} subtotal={subtotal} />
       <Component cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} cleanCart={cleanCart} saveCart={saveCart} subtotal={subtotal} {...pageProps} />
-      <Footer/>
+      <Footer />
     </NextUIProvider>
   );
 }

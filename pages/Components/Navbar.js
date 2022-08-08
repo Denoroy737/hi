@@ -35,11 +35,11 @@ const Navbar = ({ cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal
                                     </svg>
                                 </Popover.Trigger>
                                 <Popover.Content>
-                                    <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
-                                    <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
-                                    <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
-                                    <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
-                                    <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
+                                <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
+                        <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
+                        <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
+                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
+                        <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
                                 </Popover.Content>
                             </Popover>
                         </div>
@@ -89,10 +89,15 @@ const Navbar = ({ cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal
                                             }
                                             )}
                                         </ol>
-                                        <p className="font-bold">Subtotal: ₹0</p>
+                                        <p className="font-bold">Subtotal: ₹{subtotal}</p>
                                         <div className="flex space-x-1">
                                             <div>
-                                                <button className="p-2 px-4 bg-green-600 text-sm rounded-sm">Checkout</button>
+                                                <Link href="/checkout">
+                                                    <a>
+                                                        {/* if cart.lenght is empty then disable then button */}
+                                                        {<button className={(subtotal === 0) ? "p-2 px-4 bg-green-700 text-sm rounded-sm text-black" : "p-2 px-4 bg-green-600 text-sm rounded-sm text-black disabled:bg-green-900" }>Checkout</button>}
+                                                    </a>
+                                                </Link>
                                             </div>
                                             <div>
                                                 <button onClick={cleanCart} className="p-2 px-4 bg-green-600 text-sm rounded-sm">Clear</button>

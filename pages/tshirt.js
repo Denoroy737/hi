@@ -9,7 +9,7 @@ const tshirt = () => {
         <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-wrap -m-4 justify-center space-x-3">
             <Link href={"/Products/tshirt1"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -22,7 +22,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt2"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -35,7 +35,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt3"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -48,7 +48,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt4"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -61,7 +61,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt5"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -74,7 +74,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt6"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -87,7 +87,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt7"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -100,7 +100,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt8"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -113,7 +113,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt9"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>
@@ -126,7 +126,7 @@ const tshirt = () => {
                 </div>
             </Link>
             <Link href={"/Products/tshirt10"}>
-                <div className="lg:w-72 md:w-60 w-48 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
                   <a className="block relative rounded overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src="https://bit.ly/3PulkuZ" height={300} width={250} objectFit={"cover"} />
                   </a>

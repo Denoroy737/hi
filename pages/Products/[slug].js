@@ -103,7 +103,7 @@ const Post = ({addToCart}) => {
             </div>
             <div className="flex justify-between ">
               <div>
-                <span className="title-font font-medium text-2xl text-gray-900">$58.00</span>
+                <span className="title-font font-medium text-2xl text-gray-900">₹499.00</span>
               </div>
               <div className='flex md:space-x-5 space-x-4'>
                 <button className="flex text-white bg-green-600 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-green-800 rounded">Buy Now</button>
