@@ -93,6 +93,7 @@ const Post = ({ buyNow, addToCart, products, variants }) => {
                 {Object.keys(variants).includes("Red") && <button className="border-2 border-gray-300 ml-1 bg-red-700 rounded-full w-6 h-6 focus:outline-none"></button>}
                 {Object.keys(variants).includes("Blue") && <button className="border-2 border-gray-300 ml-1 bg-blue-600 rounded-full w-6 h-6 focus:outline-none"></button>}
                 {Object.keys(variants).includes("Black") && <button className="border-2 border-gray-300 ml-1 bg-black rounded-full w-6 h-6 focus:outline-none"></button>}
+                {Object.keys(variants).includes("Gray") && <button className="border-2 border-gray-300 ml-1 bg-gray-500 rounded-full w-6 h-6 focus:outline-none"></button>}
               </div>
               <div className="flex ml-6 items-center">
                 <span className="mr-3">Size</span>

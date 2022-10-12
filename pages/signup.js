@@ -1,15 +1,22 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Input } from '@nextui-org/react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useRouter } from 'next/router';
 
 const Signup = () => {
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const router = useRouter();
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      router.push('/');
+    }
+  }, [router.query]);
   
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -30,10 +37,9 @@ const Signup = () => {
       setName("");
       setEmail("");
       setPassword("");
-
-      window.location.href = "/";
-      
       toast.success("Signup successful");
+      router.push('/login')
+
     }
   };
   

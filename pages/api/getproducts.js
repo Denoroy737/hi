@@ -1,8 +1,8 @@
-import Product from '../../models/product';
+import ProductSchema from '../../models/product';
 import connectDb from '../../middleware/mongoose';
 
 const handler = async (req, res)=>{
-        const products = await Product.find();
+        const products = await ProductSchema.find();
         const tsharts = {}
         for (let item of products) {
                 if (item.title in tsharts) {

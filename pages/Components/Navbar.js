@@ -1,9 +1,9 @@
 import React from "react";
 import Link from 'next/link'
-import { Popover } from "@nextui-org/react";
+import { Dropdown, Popover } from "@nextui-org/react";
 import Image from "next/image";
 
-const Navbar = ({ cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal }) => {
+const Navbar = ({ logout, user, cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal }) => {
     return (
         <div className="px-10 mx-auto sticky w-full top-0 bg-white z-50">
             <div className="flex justify-between py-3 md:py-0 items-center">
@@ -25,17 +25,31 @@ const Navbar = ({ cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal
                     </ul>
                 </div>
                 <div className="flex items-center">
-                    
-                    <Link href="/signup"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Join Now</div></a></Link>
-                    <Link href="/login"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Login</div></a></Link>
+
+                    {!user.value && <div><Link href="/signup"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Join Now</div></a></Link>
+                        <Link href="/login"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Login</div></a></Link> </div>}
+                    {user.value &&
+                        <Popover>
+                            <Popover.Trigger>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7 ">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </Popover.Trigger>
+                            <Popover.Content>
+                                <div className="bg-[#16181a] rounded-lg">
+                                    <Link href={'/MyAccount'}><div className="hover:bg-[#383c3f] text-white rounded-md w-56 py-2 px-4 text-start">My Account</div></Link>
+                                    <Link href={'/orders'}><div className="hover:bg-[#24282b] text-white rounded-md w-56 py-2 px-4 my-1 text-start">My Orders</div></Link>
+                                    <hr />
+                                    <div className="hover:bg-[rgb(61,11,29)] text-[#f4256d] w-56 py-2 px-5 text-start" onClick={logout}>Logout</div>
+                                </div>
+                            </Popover.Content>
+                        </Popover>
+                    }
                     <div className="flex space-x-3">
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg> */}
                         <div className="lg:hidden block">
                             <Popover>
                                 <Popover.Trigger>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                                     </svg>
                                 </Popover.Trigger>
@@ -53,7 +67,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, cleanCart, saveCart, subtotal
                         <div className="inline-block cursor-pointer">
                             <Popover>
                                 <Popover.Trigger>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                     </svg>
                                 </Popover.Trigger>

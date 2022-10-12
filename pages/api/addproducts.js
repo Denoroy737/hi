@@ -1,10 +1,10 @@
-import Product from '../../models/product';
+import ProductSchema from '../../models/product';
 import connectDb from '../../middleware/mongoose';
 
 const handler = async (req, res) => {
     if (req.method === 'POST') {
         for (let i = 0; i < req.body.length; i++) {
-            const product = new Product({
+            const product = new ProductSchema({
                 title: req.body[i].title,
                 slug: req.body[i].slug,
                 description: req.body[i].description,
@@ -24,7 +24,7 @@ const handler = async (req, res) => {
     else {
         res.status(400).json({ msg: 'Method not allowed' });
     }
-    const products = await Product.find();
+    const products = await ProductSchema.find();
     res.status(200).json(products);
 
 }

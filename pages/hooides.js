@@ -13,8 +13,8 @@ const hooides = ({ products }) => {
           <div className="flex flex-wrap -m-4 justify-center space-x-3">
             {Object.keys(products).map((item) => {
               return <Link key={products[item]._id} href={`/Products/${products[item].slug}`}>
-                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center">
-                  <a className="block relative rounded overflow-hidden">
+                <div className="lg:w-72 md:w-60 w-44 md:p-4 md:shadow-lg my-3 cursor-pointer flex flex-col justify-center items-center">
+                  <a className="block relative rounded-md overflow-hidden">
                     <Image alt="ecommerce" className="object-cover object-center block" src={products[item].image} height={300} width={250} objectFit={"cover"} />
                   </a>
                   <div className="mt-4">
