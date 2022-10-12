@@ -16,7 +16,7 @@ const Signup = () => {
     if (localStorage.getItem('token')) {
       router.push('/');
     }
-  }, [router.query]);
+  }, [router, router.query]);
   
   const HandleSubmit = async (e) => {
     e.preventDefault();
