@@ -1,10 +1,10 @@
 import { NextUIProvider } from '@nextui-org/react';
-import LoadingBar from 'react-top-loading-bar'
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import LoadingBar from 'react-top-loading-bar';
+import "../styles/globals.css";
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
-import { useRouter } from 'next/router';
-import "../styles/globals.css";
 
 
 
@@ -19,10 +19,10 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     router.events.on('routeChangeStart', () => {
       setProgress(40)
-      })
+    })
     router.events.on('routeChangeComplete', () => {
       setProgress(100)
-      })
+    })
 
     try {
       if (localStorage.getItem('cart')) {
@@ -33,13 +33,14 @@ function MyApp({ Component, pageProps }) {
       // console.log(error);
       localStorage.removeItem('cart');
     }
+    
     const token = localStorage.getItem('token');
     if (token) {
       setUser({ value: token });
       setKey(Math.random());
     }
     console.log("Hello im use effect");
-  }, [router.query]);
+  }, [router.events, router.query]);
 
 
   const saveCart = (cart) => {

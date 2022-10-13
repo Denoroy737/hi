@@ -33,13 +33,12 @@ const Signup = () => {
         body: JSON.stringify(data),
       });
       const json = await res.json();
-      if (!res.ok) throw Error(json.message);
-      setName("");
-      setEmail("");
-      setPassword("");
-      toast.success("Signup successful");
-      router.push('/login')
-
+      if (!res.ok) {
+        toast.error(json.message);
+      } else {
+        toast.success(json.message);
+        router.push('/login');
+      }
     }
   };
   

@@ -1,8 +1,8 @@
-import React from 'react'
+import mongoose from 'mongoose'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import Product from '../models/Product'
-import mongoose from 'mongoose'
 
 const hooides = ({ products }) => {
   console.log(products);
@@ -20,12 +20,12 @@ const hooides = ({ products }) => {
                   <div className="mt-4">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font">{products[item].category}</h3>
                     <h2 className="text-gray-900 title-font text-lg font-medium m-0">{products[item].title}</h2>
-                  <div>
-                  <div className='flex space-x-2'>
-                      <h2 className="text-gray-900 title-font md:text-lg font-medium m-0 text-base">₹{products[item].price}</h2>
-                      <h2 className="text-gray-700 title-font md:text-lg font-medium m-0 text-base line-through">₹1999</h2>
-                      <span className='text-green-600'>70% off</span>
-                    </div>
+                    <div>
+                      <div className='flex space-x-2'>
+                        <h2 className="text-gray-900 title-font md:text-lg font-medium m-0 text-base">₹{products[item].price}</h2>
+                        <h2 className="text-gray-700 title-font md:text-lg font-medium m-0 text-base line-through">₹1999</h2>
+                        <span className='text-green-600'>70% off</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -39,7 +39,7 @@ const hooides = ({ products }) => {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   if (!mongoose.connection.readyState) {
     await mongoose.connect(process.env.MONDO_URI)
   }
@@ -47,11 +47,11 @@ export async function getServerSideProps(context) {
   const hooide = {}
   for (let item of products) {
     if (item.title in hooide) {
-      if(hooide[item.title].color.includes(item.color) && item.availableQty > 0 ){
-          hooide[item.title].color.push(item.color)
+      if (hooide[item.title].color.includes(item.color) && item.availableQty > 0) {
+        hooide[item.title].color.push(item.color)
       }
-      if(hooide[item.title].size.includes(item.size) && item.availableQty > 0 ){
-          hooide[item.title].size.push(item.size)
+      if (hooide[item.title].size.includes(item.size) && item.availableQty > 0) {
+        hooide[item.title].size.push(item.size)
       }
     }
     else {
