@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router';
 
 const Forgot = () => {
@@ -9,14 +10,14 @@ const Forgot = () => {
     if (localStorage.getItem('token')) {
       router.push('/');
     }
-  }, [router.query]);
+  }, [router, router.query]);
   
   return (
     <>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
+            <Image className="mx-auto h-12 w-auto" height={50} width={50} src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Forgot Your Password</h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or

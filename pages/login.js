@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image';
 import { useEffect, useState } from 'react'
 import { Input } from '@nextui-org/react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -14,7 +15,7 @@ const Login = () => {
     if (localStorage.getItem('token')) {
       router.push('/');
     }
-  }, [router.query]);
+  }, [router, router.query]);
   
   const HandleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const Login = () => {
         body: JSON.stringify(data),
       });
       const json = await res.json();
-      console.log(json);
+      // console.log(json);
       if (json.success) {
         localStorage.setItem("token", json.token)
         toast.success("You Are Successfully Logged in");
@@ -48,7 +49,7 @@ const Login = () => {
         <div className="max-w-md w-full space-y-8">
         <ToastContainer />
           <div>
-            <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow"/>
+            <Image className="mx-auto h-12 w-auto" height={50} width={50} src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow"/>
               <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or

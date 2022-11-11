@@ -8,7 +8,7 @@ const Orders = () => {
         if (!localStorage.getItem('token')) {
           router.push('/');
         }
-      }, [router.query]);
+      }, [router, router.query]);
 
   return (
     <div className="container mx-auto p-10 h-screen">

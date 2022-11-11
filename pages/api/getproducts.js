@@ -22,7 +22,7 @@ const handler = async (req, res)=>{
                 }
               }
               res.status(200).json({tsharts})
-        console.log(tsharts);
+        // console.log(tsharts);
 }
 
 export default connectDb(handler);

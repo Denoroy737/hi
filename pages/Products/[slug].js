@@ -118,7 +118,7 @@ const Post = ({ buyNow, addToCart, products, variants }) => {
               </div>
               <div className='flex md:space-x-5 space-x-4'>
                 <button onClick={() => { buyNow(slug, 1, products.price, products.title, products.size, products.color, products.image) }} className="flex text-white bg-green-600 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-green-800 rounded">Buy Now</button>
-                <button onClick={() => { addToCart(slug, 1, products.price, products.title, products.size, products.color, products.image) }} className="flex bg-gray-300 text-gray-600 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-gray-200 rounded">Add to Cart</button>
+                <button onClick={() => { toast.success("Your Product Successfully added to cart"); addToCart(slug, 1, products.price, products.title, products.size, products.color, products.image) }}  className="flex bg-gray-300 text-gray-600 border-0 py-2 md:px-6 px-4 focus:outline-none hover:bg-gray-200 rounded">Add to Cart</button>
                 <button className="rounded-full hidden w-10 h-10 bg-gray-200 p-0 border-0 md:inline-flex items-center justify-center text-gray-500">
                   <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                     <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
@@ -159,8 +159,6 @@ export async function getServerSideProps(context) {
       ColorSizeSlug[item.color] = {}
       ColorSizeSlug[item.color][item.size] = { slug: item.slug }
     }
-
-    
   }
 
   return {

@@ -2,11 +2,9 @@ import { NextUIProvider } from '@nextui-org/react';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import LoadingBar from 'react-top-loading-bar';
-import "../styles/globals.css";
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar';
-
-
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
@@ -37,9 +35,9 @@ function MyApp({ Component, pageProps }) {
     const token = localStorage.getItem('token');
     if (token) {
       setUser({ value: token });
-      setKey(Math.random());
     }
-    console.log("Hello im use effect");
+    setKey(Math.random());
+    // console.log("Hello im use effect");
   }, [router.events, router.query]);
 
 

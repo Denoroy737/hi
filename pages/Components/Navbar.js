@@ -10,7 +10,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, cleanCart, save
                 <div className="">
                     <Link href="/">
                         <a>
-                            HI
+                            <h2 className="text-black font-bold">Nova</h2>
                             {/* <Image src={"/../../public/logo.jpg"} alt={"logo"} height={100} width={200} /> */}
                         </a>
                     </Link>
@@ -18,14 +18,14 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, cleanCart, save
                 <div>
                     <ul className="md:flex md:justify-between md:space-x-3 hidden">
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Home</li></a></Link>
-                        <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">T-shirt</li></a></Link>
-                        <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Hooides</li></a></Link>
+                        <Link href={"/tshirt"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Men</li></a></Link>
+                        <Link href={"/hooides"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Women</li></a></Link>
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Shop</li></a></Link>
                         <Link href={"/"}><a><li className="py-2.5 px-3 hover:bg-gray-200 text-black m-0 rounded-lg">Product</li></a></Link>
                     </ul>
                 </div>
                 <div className="flex items-center">
-
+                    {/* cheack the user is logined or */}
                     {!user.value && <div><Link href="/signup"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Join Now</div></a></Link>
                         <Link href="/login"><a><div className="lg:inline-block hidden py-2 px-5 mx-2 text-black bg-gray-200 rounded-md">Login</div></a></Link> </div>}
                     {user.value &&
@@ -78,34 +78,37 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, cleanCart, save
                                         <ol className="list-none m-0">
                                             {Object.keys(cart).length === 0 ? <h5>Your cart is Empty!</h5> : Object.keys(cart).map((k) => {
                                                 return (
-                                                    <li key={k} className="flex justify-between items-center py-2">
-                                                        <div className="flex justify-between my-5 space-x-2">
+                                                    <Link href={`http://localhost:3000/Products/${cart[k].title}`} key={k} className="flex justify-start items-center py-2 border-y my-2 ">
+                                                        <div className="flex justify-start space-x-4 my-2 border-2 rounded-lg">
                                                             <div>
                                                                 <Image className="rounded-xl" alt="ecommerce" src={cart[k].image} height={50} width={50} quality={100} objectFit={"cover"} />
                                                             </div>
                                                             <div className="flex flex-col space-x-1">
-                                                                <div className="flex  space-x-2">
-                                                                    <h4>{cart[k].name}</h4>
-                                                                    <h4>₹{cart[k].price}</h4>
-                                                                </div>
-                                                                <div className="flex space-x-2">
-                                                                    <button onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant, cart[k].image) }}>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                <h4 className="m-0">{cart[k].name}</h4>
+                                                                <div className='flex justify-start space-x-5 items-center'>
+                                                                    <div>
+                                                                        <h4 className="m-0">Size: {cart[k].size}</h4>
+                                                                    </div>
+                                                                    <div className="flex space-x-2">
+                                                                        {/* <button onClick={() => { removeFromCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant, cart[k].image) }}>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </button>
+                                                                            </svg>
+                                                                        </button> */}
 
-                                                                    <button>{cart[k].qty}</button>
+                                                                        <h4 className="m-0">Qty: {cart[k].qty}</h4>
 
-                                                                    <button onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant, cart[k].image) }}>
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                                        {/* <button onClick={() => { addToCart(k, 1, cart[k].price, cart[k].name, cart[k].size, cart[k].variant, cart[k].image) }}>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                                                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />
-                                                                        </svg>
-                                                                    </button>
+                                                                            </svg>
+                                                                        </button> */}
+                                                                    </div>
+                                                                <h4 className="m-0">₹{cart[k].price}</h4>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </li>
+                                                    </Link>
                                                 )
                                             }
                                             )}
@@ -116,7 +119,7 @@ const Navbar = ({ logout, user, cart, addToCart, removeFromCart, cleanCart, save
                                                 <Link href="/checkout">
                                                     <a>
                                                         {/* if cart.lenght is empty then disable then button */}
-                                                        {<button className={(subtotal === 0) ? "p-2 px-4 bg-green-700 text-sm rounded-sm text-black" : "p-2 px-4 bg-green-600 text-sm rounded-sm text-black disabled:bg-green-900"}>Checkout</button>}
+                                                        {<button className={(subtotal === 0) ? "p-2 px-4 bg-green-700 text-sm rounded-sm text-white" : "p-2 px-4 bg-green-600 text-sm rounded-sm text-white disabled:bg-green-900"}>Checkout</button>}
                                                     </a>
                                                 </Link>
                                             </div>
